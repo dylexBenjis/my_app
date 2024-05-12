@@ -15,12 +15,7 @@ const Nav = () => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme, resolvedTheme } = useTheme();
 
-  let registerScroll = window.scrollY;
 
-    const logoRef = useRef<HTMLDivElement>(null);
-    const animationTrigger = useRef<HTMLDivElement>(null);
-
-  const [scrollDirection, setScrollDirection] = useState('');
     const positionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
