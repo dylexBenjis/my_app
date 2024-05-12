@@ -31,7 +31,6 @@ const Nav = () => {
       let topp = currentScrollPos * 0.3;
       if (isScrollingUp&&positionRef.current) {
         positionRef.current.style.top = `-${topp}px`;
-        setScrollDirection(isScrollingUp ? 'up' : 'down');
       }
       if(isScrollingDown&&positionRef.current){
         positionRef.current.style.top = `0px`;
