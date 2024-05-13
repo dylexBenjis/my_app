@@ -3,10 +3,10 @@ import React from 'react'
 import { ThemeProvider } from "next-themes";
 
 
-const ThemeModeProvider = (props:any) => {
+const ThemeModeProvider = ({children}: any) => {
   return (
       <ThemeProvider>
-          {props.children}
+          {children}
     </ThemeProvider>
   )
 }

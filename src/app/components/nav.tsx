@@ -4,23 +4,19 @@ import styles from '@/app/page.module.css'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
-import { IoMoon, IoSunny } from 'react-icons/io5'
-import { useTheme } from 'next-themes'
+import ThemeSwitch from './client components/themeSwitch'
  
 gsap.registerPlugin(useGSAP);
 
 const Nav = () => {
 
-  //for theme mode dark/light
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme, resolvedTheme } = useTheme();
+
 
 
     const positionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
 
-    setMounted(true);//for theme tocheck if component is mounted
 
     let prevScrollPos = 0;
 
@@ -67,10 +63,8 @@ const Nav = () => {
               </div>                
 
               <div className='flex cursor-pointer backdrop-blur bg-gray-500/30 w-fit gap-x-10 px-3 items-center justify-center  border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
-            {resolvedTheme==='light'&&<IoMoon onClick={()=>setTheme('dark')}/> }
-            {resolvedTheme==='dark'&&<IoSunny onClick={()=>setTheme('light')}/> }
-            {!mounted&&<IoSunny/> }
-            
+
+            <ThemeSwitch/>
           </div>
         </div>   
       

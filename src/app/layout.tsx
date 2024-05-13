@@ -16,15 +16,12 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>)
+{
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeModeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeModeProvider enableSystem>
         <Socialmedia />
         <Nav />
         <div>{children}</div>
