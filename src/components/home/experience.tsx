@@ -11,14 +11,14 @@ const Experience = () => {
               <div className='flex flex-col items-center border-solid border-2 rounded-[1rem] border-gray-600/50 p-4 gap-4 w-full h-full'>
                   <div>Software Development Tech Stack</div>
                   <div className='grid grid-cols-2 sm:grid-cols-3 w-full gap-5 h-fit'>
-                      <div className='flex w-full bg-gray-900/50 items-center justify-center gap-2 h-[3rem]'><p>react</p><FaReact className='text-blue-400'/></div>
-                      <div className='flex w-full bg-gray-900/50 items-center justify-center gap-2 h-[3rem]'><p>node.js</p><FaNodeJs className='text-yellow-400'/></div>
-                      <div className='flex w-full bg-gray-900/50 items-center justify-center gap-2 h-[3rem]'><p>express.js</p><SiExpress className='text-white'/></div>
-                      <div className='flex w-full bg-gray-900/50 items-center justify-center gap-2 h-[3rem]'><p>cloudflare</p><SiCloudflare className='text-orange-400'/></div>
-                      <div className='flex w-full bg-gray-900/50 items-center justify-center gap-2'><p>typescript</p><SiTypescript className='text-blue-900'/></div>
-                      <div className='flex w-full bg-gray-900/50 items-center justify-center gap-2 h-[3rem]'><p>mongoDb</p><SiMongodb className='text-green-400'/></div>
-                      <div className='flex w-full bg-gray-900/50 items-center justify-center gap-2 h-[3rem]'><p>vercel</p><SiVercel className='text-black'/></div>
-                      <div className='flex w-full bg-gray-900/50 items-center justify-center gap-2 h-[3rem]'><p>Git</p><SiGit className='text-orange-700'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem]'><p>react</p><FaReact className='text-blue-400'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem]'><p>node.js</p><FaNodeJs className='text-yellow-400'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem]'><p>express.js</p><SiExpress className='text-white'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem]'><p>cloudflare</p><SiCloudflare className='text-orange-400'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2'><p>typescript</p><SiTypescript className='text-blue-900'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem]'><p>mongoDb</p><SiMongodb className='text-green-400'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem]'><p>vercel</p><SiVercel className='text-black'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem]'><p>Git</p><SiGit className='text-orange-700'/></div>
                   </div>
               </div>
               <div className='flex flex-col p-4 gap-4 border-solid border-2 rounded-[1rem] border-gray-600/50 w-full h-full items-center'>

@@ -9,8 +9,8 @@ const HeroIntroduction = () => {
               Engineering, Software deveolping, IoT, Computer Networking, Youtube.
               
               </h1>
-              <p className="pb-6 text-base">
-                  I’m benji, and i am based in Lagos Nigeria. Engineering and Computer has been things i always wanted to do since i was little.
+              <p className="pb-6 text-base sm:text-lg text-gray-900 dark:text-gray-300">
+                  I’m benji, and i am based in Lagos Nigeria. Engineering and Computer has been things i always want to do.
               </p>
               <div className=' py-6'><button className=' bg-gray-600/30 dark:bg-gray-600 py-4 w-fit px-4 cursor-pointer hover:bg-gray-700/50 dark:hover:bg-gray-700'>Contact me</button></div>
           </div>
