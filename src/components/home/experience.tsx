@@ -8,7 +8,7 @@ const Experience = () => {
     <div className='py-10'>
         
           <div className='grid grid-cols-1 lg:grid-cols-2 px-0 sm:px-[5rem] lg:px-0 gap-5'>
-              <div className='flex flex-col items-center border-solid border-2 rounded-[1rem] border-gray-600 p-4 gap-4 w-full h-full'>
+              <div className='flex flex-col items-center border-solid border-2 rounded-[1rem] border-gray-600/50 p-4 gap-4 w-full h-full'>
                   <div>Software Development Tech Stack</div>
                   <div className='grid grid-cols-2 sm:grid-cols-3 w-full gap-5 h-fit'>
                       <div className='flex w-full bg-gray-900/50 items-center justify-center gap-2 h-[3rem]'><p>react</p><FaReact className='text-blue-400'/></div>
@@ -21,7 +21,7 @@ const Experience = () => {
                       <div className='flex w-full bg-gray-900/50 items-center justify-center gap-2 h-[3rem]'><p>Git</p><SiGit className='text-orange-700'/></div>
                   </div>
               </div>
-              <div className='flex flex-col p-4 gap-4 border-solid border-2 rounded-[1rem] border-gray-600 w-full h-full items-center'>
+              <div className='flex flex-col p-4 gap-4 border-solid border-2 rounded-[1rem] border-gray-600/50 w-full h-full items-center'>
                   <div>work</div>
                   <div className='flex flex-col w-full gap-4'>
                       <div className='grid grid-cols-[20%_60%_20%]'>

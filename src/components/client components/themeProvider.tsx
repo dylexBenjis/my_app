@@ -5,7 +5,7 @@ import { ThemeProvider } from "next-themes";
 
 const ThemeModeProvider = ({children}: any) => {
   return (
-      <ThemeProvider>
+      <ThemeProvider attribute='class' enableSystem>
           {children}
     </ThemeProvider>
   )

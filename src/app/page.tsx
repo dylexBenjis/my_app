@@ -1,9 +1,9 @@
 import Image from "next/image";
-import HeroIntroduction from "./components/home/HeroIntroduction";
+import HeroIntroduction from "@/components/home/HeroIntroduction";
 import styles from '@/app/page.module.css'
-import Experience from "./components/home/experience";
-import BlogSection from "./components/home/blogSection";
-import Projects from "./components/home/projects";
+import Experience from "@/components/home/experience";
+import BlogSection from "@/components/home/blogSection";
+import Projects from "@/components/home/projects";
 
 export default function Home() {
   return (

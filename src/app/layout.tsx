@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Socialmedia from "./components/client components/socialmedia";
-import Footer from "./components/footer";
-import Nav from "./components/nav";
-import ThemeModeProvider from "./components/client components/themeProvider";
+import Socialmedia from "@/components/client components/socialmedia";
+import Footer from "@/components/footer";
+import Nav from "@/components/nav";
+import ThemeModeProvider from "@/components/client components/themeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +21,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeModeProvider enableSystem>
+        <ThemeModeProvider>
         <Socialmedia />
         <Nav />
         <div>{children}</div>
