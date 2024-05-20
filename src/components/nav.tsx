@@ -72,20 +72,22 @@ const Nav = () => {
             <a className='flex bg-orange-600 w-[50px] h-[50px] relative'><Image src='/logo.jpg' alt='logo' fill={true}  fetchPriority='high' /></a>
             </div>
       */}
-          <div style={{transform:scrolled?'scale(1)':'scale(1.2)', transition:scrolled?'0.1s ease-in-out':'0.1s'}}className='text-2xl font-bold mix-blend-difference text-orange-600 text-shadow-lg [text-shadow:_0px_0px_4px_rgb(71_89_194)] transition'>dylexBenji</div>
-              <div className='hidden  backdrop-blur bg-gray-500/30 sm:flex w-fit gap-x-10 px-6 items-center justify-center border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
+          <a href='/'>
+                      <div style={{transform:scrolled?'scale(1)':'scale(1.2)', transition:scrolled?'0.1s ease-in-out':'0.1s'}}className='text-2xl font-bold mix-blend-difference text-orange-600 italic font-zenDots text-shadow-lg [text-shadow:_0px_0px_4px_rgb(71_89_194)] transition'>dylexBenji</div>
+
+          </a>
+
+          <div className='hidden  backdrop-blur bg-gray-500/30 sm:flex w-fit gap-x-10 px-6 items-center justify-center border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
                   <div className='cursor-pointer hover:text-gray-400'>Home</div>
                   <div className='cursor-pointer hover:text-gray-400'>Projects</div>
-                  <div className='cursor-pointer hover:text-gray-400'>Blog</div>
+                  <div className='cursor-pointer hover:text-gray-400'><a href='/blog'>Blog</a></div>
                 </div>
-              <div className='flex  backdrop-blur bg-gray-500/30 sm:hidden w-fit gap-x-10 px-6 items-center justify-center  border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
-                  <div className='cursor-pointer hover:text-gray-400'>Home</div>
+              <div className='flex  backdrop-blur bg-gray-500/30 sm:hidden w-fit gap-x-10 px-3 items-center justify-center  border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
+                  <div className='cursor-pointer hover:text-gray-400'>menu</div>
               </div>                
 
-              <div className='flex cursor-pointer backdrop-blur bg-gray-500/30 w-fit gap-x-10 px-3 items-center justify-center  border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
 
             <ThemeSwitch/>
-          </div>
         </div>   
       
       </div>
