@@ -4,6 +4,7 @@ import { formatDate, getBlogPosts } from '@/app/blog/utils'
 import { baseUrl } from '@/app/sitemap'
 import styles from '@/app/page.module.css'
 import Image from 'next/image'
+import { FaArrowLeft,} from 'react-icons/fa6'
 
 
 
@@ -87,8 +88,8 @@ export default function Blog({ params }) {
           <div className='pt-[5rem]'>
       <div className={styles.container} style={{display:'flex', justifyContent:'center'}}>
         <div className='w-[600px] prose dark:prose-invert'>
-        
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm  text-neutral-600 dark:text-neutral-400">  
+        <div className='flex flex-row gap-2 mt-2 items-center'><a href='/blog' className='rounded-full bg-gray-400/20 hover:scale-110 cursor-pointer w-8 h-8 justify-center items-center flex'><FaArrowLeft/></a><span className='text-gray-500'>back to blog posts</span></div>
+      <div className="flex justify-between items-center mb-5 text-sm  text-neutral-600 dark:text-neutral-400">  
       <p className="font-semibold">
         {post.metadata.title}
       </p>
@@ -99,6 +100,7 @@ export default function Blog({ params }) {
       <article>
         <CustomMDX source={post.content} />
       </article>
+        <div className='flex flex-row gap-2 mt-10 mb-12 items-center'><a href='/blog' className='rounded-full bg-gray-400/20 hover:scale-110 cursor-pointer w-8 h-8 justify-center items-center flex'><FaArrowLeft/></a><span className='text-gray-500'>back to blog posts</span></div>
         </div>
       </div>
     </div>

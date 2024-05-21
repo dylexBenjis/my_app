@@ -1,5 +1,7 @@
 import BlogSection from '@/components/home/blogSection'
 import React from 'react'
+import styles from '@/app/page.module.css'
+
 
 export const metadata = {
   title: 'Blog',
@@ -7,8 +9,12 @@ export const metadata = {
 }
 
 const Page = () => {
-  return (
-     <BlogSection/>
+    return (
+                <div className='pt-[5rem]'>
+      <div className={styles.container} style={{display:'flex', justifyContent:'center'}}>
+                <BlogSection />
+      </div>
+    </div>
   )
 }
 

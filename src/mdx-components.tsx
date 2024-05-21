@@ -52,7 +52,7 @@ const BlogHeaderImage = (props) => {
 console.log(props.src)
     return (
 
-          <Image sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' fill={true} src={props.src} alt={props.alt} />
+          <Image sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' className='shadow-xl' fill={true} src={props.src} alt={props.alt} />
 
 
   )
