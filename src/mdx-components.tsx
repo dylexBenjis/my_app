@@ -49,13 +49,11 @@ function CustomLink(props) {
 //@ts-ignore
 //for blog image
 const BlogHeaderImage = (props) => {
-
+console.log(props.src)
     return (
-      <div className='flex justify-center w-full'>
-        <div className='relative h-[120px] sm:h-[150px] w-[calc(100%-50px)] sm:w-[400px] '>
-          <Image fill={true} src={props.src} alt={props.alt} />
-            </div>
-        </div>
+
+          <Image sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' fill={true} src={props.src} alt={props.alt} />
+
 
   )
 }
