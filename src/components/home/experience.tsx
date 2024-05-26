@@ -23,16 +23,16 @@ const Experience = () => {
               </div>
               <div className='flex flex-col p-4 gap-4 border-solid border-2 rounded-[1rem] border-gray-600/50 w-full h-full items-center'>
                   <div>work</div>
-                  <div className='flex flex-col w-full gap-5 px-5 pr-[10rem]'>
+                  <div className='flex flex-col w-full gap-5 px-3 sm:px-14 lg:px-[6rem]'>
                       <div className='flex gap-5'>
-                          <div className='flex w-fit overflow-hidden'><Image src='/logo.jpg' alt='' width={50} height={50}/></div>
+                          <div className='flex w-fit rounded-full overflow-hidden'><Image src='/logo.jpg' alt='' width={50} height={50}/></div>
                           <div className='flex flex-col'>
                               <div title='experience company'>Mbelu Consulting</div>
                               <div className='text-gray-500' title='role in company'>I.T personnel</div>
                           </div>
                     </div>
                       <div className='flex gap-5'>
-                          <div className='flex w-fit overflow-hidden '><Image src='/logo.jpg' alt='' width={50} height={50} objectFit=''/></div>
+                          <div className='flex w-fit rounded-full overflow-hidden '><Image src='/logo.jpg' alt='' width={50} height={50} objectFit=''/></div>
                           <div className='flex flex-col'>
                               <div title='experience company'>Tizeti Networks</div>
                               <div title='role in company' className='text-gray-500'>Field Service Engineer</div>
