@@ -16,11 +16,11 @@ const BlogSection = () => {
                                 
                         <div className='text-lg'>{post.metadata.title}</div>
                         <div className='text-gray-400'>{post.metadata.summary}</div>
-                        <div className='text-green-400 cursor-pointer pt-3'><a href={`/blog/${post.slug}`}>read post</a></div>
+                        <div className='text-green-400 hover:text-orange-500 cursor-pointer pt-3 w-fit'><a href={`/blog/${post.slug}`}>read post</a></div>
                             
                     </div>
-                    <div className='hidden lg:flex relative h-full w-full bg-green-500 shadow-xl'>
-                        <Image src={post.metadata.image} alt='' fill={true} />
+                    <div className='hidden lg:flex relative h-full w-full shadow-md rounded-r-3xl overflow-hidden bg-gray-100'>
+                        <Image src={post.metadata.image} alt='' fill={true}/>
                     </div>
                 </div>
             </div>

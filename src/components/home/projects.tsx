@@ -4,7 +4,7 @@ import React from 'react'
 
 const Projects = () => {
   return (
-          <div className='py-10 px-0 lg:px-[10rem]'>
+          <div className='py-10 px-0 lg:px-[10rem]' id='projects'>
           <div className='flex flex-col gap-4'>
               <div className='pb-3 text-xl'>Projects</div>
               <div className='flex flex-col sm:flex-row gap-5 py-3 justify-between'>

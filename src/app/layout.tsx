@@ -28,17 +28,28 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>)
-{
+const Children = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
   return (
-    <html lang="en" className={`${inter.variable} ${zen_dots.variable}`} suppressHydrationWarning>
-      <body>
-        <ThemeModeProvider>
+    <section>
         <Socialmedia />
         <Nav />
         <div>{children}</div>
         <Footer/>
+        <ThemeModeProvider/>
+    </section>
+  )
+}
+
+export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>)
+{
+  return (
+    <html lang="en" className={`${inter.variable} ${zen_dots.variable}`} suppressHydrationWarning>
+      <body  className='bg-gray-400/30 dark:bg-[#04050c]'>
+        
+        <ThemeModeProvider>
+          <Children>{children}</Children>
         </ThemeModeProvider>
+
       </body>
     </html>
   );

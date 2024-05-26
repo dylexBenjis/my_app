@@ -5,6 +5,7 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
 import ThemeSwitch from './client components/themeSwitch'
+import { Link } from 'react-scroll';
  
 gsap.registerPlugin(useGSAP);
 
@@ -73,13 +74,24 @@ const Nav = () => {
             </div>
       */}
           <a href='/'>
-                      <div style={{transform:scrolled?'scale(1)':'scale(1.2)', transition:scrolled?'0.1s ease-in-out':'0.1s'}}className='text-2xl font-bold mix-blend-difference text-orange-600 italic font-zenDots text-shadow-lg [text-shadow:_0px_0px_4px_rgb(71_89_194)] transition'>dylexBenji</div>
+                      <div style={{transform:scrolled?'scale(1)':'scale(1.2)', transition:scrolled?'0.1s ease-in-out':'0.1s'}}className='text-lg lg:text-2xl font-bold mix-blend-difference text-orange-600 italic font-zenDots text-shadow-lg [text-shadow:_0px_0px_4px_rgb(71_89_194)] transition'>dylexBenji</div>
 
           </a>
 
           <div className='hidden  backdrop-blur bg-gray-500/30 sm:flex w-fit gap-x-10 px-6 items-center justify-center border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
-                  <div className='cursor-pointer hover:text-gray-400'>Home</div>
-                  <div className='cursor-pointer hover:text-gray-400'>Projects</div>
+                  <div className='cursor-pointer hover:text-gray-400'><a href='/'>Home</a></div>
+            <div className='cursor-pointer hover:text-gray-400'>
+              <Link
+                to='projects'
+                spy={true}
+                smooth={true}
+                offset={0}
+                hashSpy={true}
+                delay={200}
+                isDynamic={true}
+                ignoreCancelEvents={false}
+                spyThrottle={500}>Projects</Link>
+            </div>
                   <div className='cursor-pointer hover:text-gray-400'><a href='/blog'>Blog</a></div>
                 </div>
               <div className='flex  backdrop-blur bg-gray-500/30 sm:hidden w-fit gap-x-10 px-3 items-center justify-center  border-solid border-2 border-gray-500/50 rounded-full z-[10]'>

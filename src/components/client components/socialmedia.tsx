@@ -14,8 +14,8 @@ const Socialmedia = () => {
     },[])
 
   return (
-      <div className='fixed h-screen right-1 sm:right-3 z-[1] '>
-        <div className='flex flex-col text-xl sm:text-2xl gap-y-5 sm:gap-y-5 absolute right-0 inset-y-0 -translate-y-[50%] justify-center ' data-aos='fade-in' data-aos-once='true'>
+      <div className='fixed h-screen  right-1 sm:right-3 xl:right-11 z-[1] '>
+        <div className='flex flex-col text-xl sm:text-2xl gap-y-5 sm:gap-y-5 absolute right-0 inset-y-0 justify-center ' data-aos='fade-in' data-aos-once='true'>
             <a className=' cursor-pointer' href='https://github.com/dylexBenjis' target='_blank' data-aos='fade-left' data-aos-delay='200' data-aos-once='true'><FaGithub/></a>
             <a className=' cursor-pointer' href='https://facebook.com/benji.tentacion' target='_blank' data-aos='fade-left' data-aos-delay='300' data-aos-once='true'><FaFacebook/></a>
             <a className=' cursor-pointer' href='https://twitter.com/benjichukwudile' target='_blank' data-aos='fade-left' data-aos-delay='400' data-aos-once='true'><FaXTwitter/></a>
