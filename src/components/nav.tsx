@@ -116,7 +116,7 @@ const Nav = () => {
       
       </div>
       {mobileOpen &&
-        <div className='flex  flex-col h-fit w-fit py-3 justify-center items-center border-[1px] shadow-xl border-gray-500 bg-gray-300 dark:bg-[#04050c]/50 absolute left-[50%] mt-2 gap-3' style={{transform:'translate(-18%,0)'}}>
+        <div className='flex  flex-col h-fit w-fit py-3 justify-center items-center border-[1px] shadow-xl dark:shadow-gray-900/30 border-gray-500 bg-gray-300 dark:bg-[#04050c] absolute left-[50%] mt-2 gap-3' style={{transform:'translate(-18%,0)'}}>
         <div className='flex justify-center items-center px-5'><a href='/'>Home</a></div><hr className='bg-black h-[1px] w-[100%]'/>
         <div className='flex justify-center items-center px-5'>{home? <Link
                 to='projects'
