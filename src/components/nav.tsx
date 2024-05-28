@@ -1,20 +1,31 @@
 'use client'
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { use, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import styles from '@/app/page.module.css'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
 import ThemeSwitch from './client components/themeSwitch'
 import { Link } from 'react-scroll';
+import { usePathname } from 'next/navigation'
+import { IoIosArrowDown } from 'react-icons/io'
  
 gsap.registerPlugin(useGSAP);
 
 const Nav = () => {
   
+  //logic to set projects button route right
+  const router = usePathname();
+  const [home, setHome] = useState(false);
+  useEffect(() => {
+    if (router === '/') {
+      setHome(true)
+    } else {
+      setHome(false)
+    }
+  }, []);
 
 
-    const [scrolled, setScrolled] = useState(false);
-
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -33,8 +44,7 @@ const Nav = () => {
 
 
 
-    const positionRef = useRef<HTMLDivElement>(null);
-
+  const positionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
 
 
@@ -64,6 +74,8 @@ const Nav = () => {
   }, []);
     
 
+  //mobile menu
+  const [mobileOpen, setMobileOpen] = useState(false);
   return (
 
       <div className={`w-screen fixed pt-4 h-auto transition-all duration-100 z-[10]`} ref={positionRef}  >
@@ -74,14 +86,14 @@ const Nav = () => {
             </div>
       */}
           <a href='/'>
-                      <div style={{transform:scrolled?'scale(1)':'scale(1.2)', transition:scrolled?'0.1s ease-in-out':'0.1s'}}className='text-lg lg:text-2xl font-bold mix-blend-difference text-orange-600 italic font-zenDots text-shadow-lg [text-shadow:_0px_0px_4px_rgb(71_89_194)] transition'>dylexBenji</div>
+                      <div style={{transform:scrolled?'scale(1)':'scale(1.2)', transition:scrolled?'0.1s ease-in-out':'0.1s'}}className='text-lg lg:text-2xl font-bold mix-blend-difference text-orange-600 italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_1px_1px_0_rgb(71_89_194)] transition'>dylexBenji</div>
 
           </a>
 
           <div className='hidden  backdrop-blur bg-gray-500/30 sm:flex w-fit gap-x-10 px-6 items-center justify-center border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
                   <div className='cursor-pointer hover:text-gray-400'><a href='/'>Home</a></div>
             <div className='cursor-pointer hover:text-gray-400'>
-              <Link
+{home? <Link
                 to='projects'
                 spy={true}
                 smooth={true}
@@ -90,12 +102,12 @@ const Nav = () => {
                 delay={200}
                 isDynamic={true}
                 ignoreCancelEvents={false}
-                spyThrottle={500}>Projects</Link>
+                spyThrottle={500}>Projects</Link> : <a href='/#projects'>Projects</a>}
             </div>
                   <div className='cursor-pointer hover:text-gray-400'><a href='/blog'>Blog</a></div>
                 </div>
               <div className='flex  backdrop-blur bg-gray-500/30 sm:hidden w-fit gap-x-10 px-3 items-center justify-center  border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
-                  <div className='cursor-pointer hover:text-gray-400'>menu</div>
+                  <div className='flex flex-row items-center justify-center gap-1 cursor-pointer w-fit' onClick={()=>setMobileOpen(!mobileOpen)}><p>menu</p> <IoIosArrowDown/></div>
               </div>                
 
 
@@ -103,6 +115,21 @@ const Nav = () => {
         </div>   
       
       </div>
+      {mobileOpen &&
+        <div className='flex  flex-col h-fit w-fit py-3 justify-center items-center border-[1px] shadow-xl border-gray-500 bg-gray-300 dark:bg-[#04050c]/50 absolute left-[50%] mt-2 gap-3' style={{transform:'translate(-18%,0)'}}>
+        <div className='flex justify-center items-center px-5'><a href='/'>Home</a></div><hr className='bg-black h-[1px] w-[100%]'/>
+        <div className='flex justify-center items-center px-5'>{home? <Link
+                to='projects'
+                spy={true}
+                smooth={true}
+                offset={0}
+                hashSpy={true}
+                delay={200}
+                isDynamic={true}
+                ignoreCancelEvents={false}
+                spyThrottle={500}>Projects</Link> : <a href='/#projects'>Projects</a>}</div><hr className='bg-black h-[1px] w-[100%]'/>
+        <div className='flex justify-center items-center px-5'><a href='/blog'>Blog</a></div>
+      </div>}
 
       </div>
 
