@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { FaNodeJs, FaReact } from 'react-icons/fa6'
 import {SiCloudflare, SiExpress, SiGit, SiGithub, SiMongodb, SiTypescript, SiVercel,} from 'react-icons/si'
+import { experienceData } from './workExperienceData'
 
 const Experience = () => {
   return (
@@ -23,22 +24,19 @@ const Experience = () => {
               </div>
               <div className='flex flex-col p-4 gap-4 border-solid border-2 rounded-[1rem] border-gray-600/50 w-full h-full items-center'>
                   <div>work</div>
-                  <div className='flex flex-col w-full gap-5 px-1 sm:px-14 lg:px-[6rem]'>
-                      <div className='flex gap-3 sm:gap-5'>
-                          <div className='flex w-fit h-[50px] rounded-full overflow-hidden'><Image src='/logo.jpg' alt='' width={50} height={50}/></div>
-                          <div className='flex flex-col'>
-                              <div title='experience company'>Mbelu Consulting</div>
-                              <div className='text-gray-500 text-[0.7rem]' title='role in company'>I.T personnel</div>
-                          </div>
-                    </div>
-                      <div className='flex gap-3 sm:gap-5'>
-                          <div className='flex w-fit h-[50px] rounded-full overflow-hidden '><Image src='/logo.jpg' alt='' width={50} height={50}/></div>
-                          <div className='flex flex-col'>
-                              <div title='experience company'>Tizeti Networks</div>
-                              <div title='role in company' className='text-gray-500 text-[0.7rem]'>Field Service Engineer</div>
-                          </div>
-                    </div>
-                  </div>
+                  {experienceData.map((data, index) => {
+                      return (
+                            <div key={index} className='flex flex-col w-full gap-5 px-1 sm:px-14 lg:px-[6rem]'>
+                            <div className='flex gap-3 sm:gap-5'>
+                                  <div className='flex w-fit h-[50px] rounded-full overflow-hidden'><Image src={data.companyLogo} alt={data.companyLogoAlt} width={50} height={50}/></div>
+                                <div className='flex flex-col'>
+                                    <div title='experience company'>{data.company}</div>
+                                    <div className='text-gray-500 text-[0.7rem]' title='role in company'>{data.jobTitle}</div>
+                                </div>
+                            </div>
+                        </div>
+                        )
+                    })}
                   <div className='cursor-pointer mt-5'><button className='h-full w-full bg-gray-600/30 dark:bg-gray-600 px-5 py-3'>download cv</button></div>
               </div>
           </div>
