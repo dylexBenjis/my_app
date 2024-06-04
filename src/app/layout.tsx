@@ -31,11 +31,7 @@ export const metadata: Metadata = {
 const Children = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
   return (
     <section>
-        <Socialmedia />
-        <Nav />
-        <div>{children}</div>
-        <Footer/>
-        <ThemeModeProvider/>
+
     </section>
   )
 }
@@ -47,7 +43,11 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
       <body  className='bg-gray-400/30 dark:bg-[#04050c]'>
         
         <ThemeModeProvider>
-          <Children>{children}</Children>
+        <Socialmedia />
+        <Nav />
+        <div>{children}</div>
+        <Footer/>
+        <ThemeModeProvider/>
         </ThemeModeProvider>
 
       </body>

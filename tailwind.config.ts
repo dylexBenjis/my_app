@@ -19,6 +19,9 @@ const config: Config = {
         mono: ['var(--font-roboto-mono)'],
         zenDots:['var(--font-zen-dots)'],
       },
+      animation: {
+        'spin-slow':'spin 1.5s linear infinite',
+      },
     },
   },
   plugins: [

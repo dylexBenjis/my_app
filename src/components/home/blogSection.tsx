@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { formatDate, getBlogPosts } from '@/app/blog/utils'
+import Link from 'next/link'
 
 const BlogSection = () => {
 
@@ -20,7 +21,7 @@ const BlogSection = () => {
                             {post.metadata.summary}
                         </div>
                         <div className='text-green-400 hover:text-orange-500 cursor-pointer pt-3 w-fit'>
-                            <a href={`/blog/${post.slug}`}>read post</a>
+                            <Link href={`/blog/${post.slug}`} prefetch={true}>read post</Link>
                         </div>
                     </div>
                     <div className='hidden lg:flex relative h-full w-full shadow-md rounded-r-3xl overflow-hidden bg-gray-100'>

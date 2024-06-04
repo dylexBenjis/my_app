@@ -5,6 +5,7 @@ import { baseUrl } from '@/app/sitemap'
 import styles from '@/app/page.module.css'
 import Image from 'next/image'
 import { FaArrowLeft,} from 'react-icons/fa6'
+import Link from 'next/link'
 
 
 
@@ -53,8 +54,12 @@ export function generateMetadata({ params }) {
     },
   }
 }
-//@ts-ignore
-export default function Blog({ params }) {
+
+interface Params{
+  slug: string,
+}
+
+export default async function Blog({ params }: Readonly<{params: Params}>) {
   let post = getBlogPosts().find((post) => post.slug === params.slug)
 
   if (!post) {
@@ -88,7 +93,7 @@ export default function Blog({ params }) {
           <div className='pt-[5rem]'>
       <div className={styles.container} style={{display:'flex', justifyContent:'center'}}>
         <div className='w-[600px] prose dark:prose-invert'>
-        <div className='flex flex-row gap-2 mt-2 items-center'><a href='/blog' className='rounded-full bg-gray-400/20 hover:scale-110 cursor-pointer w-8 h-8 justify-center items-center flex'><FaArrowLeft/></a><span className='text-gray-500'>back to blog posts</span></div>
+        <div className='flex flex-row gap-2 mt-2 items-center'><Link href='/blog' className='rounded-full bg-gray-400/20 hover:scale-110 cursor-pointer w-8 h-8 justify-center items-center flex'><FaArrowLeft/></Link><span className='text-gray-500'>back to blog posts</span></div>
       <div className="flex justify-start items-center mb-5 text-sm  text-neutral-600 dark:text-neutral-400">  
       <p className="font-semibold">
         {post.metadata.title}
@@ -97,7 +102,7 @@ export default function Blog({ params }) {
       <article>
         <CustomMDX source={post.content} />
       </article>
-        <div className='flex flex-row gap-2 mt-10 mb-12 items-center'><a href='/blog' className='rounded-full bg-gray-400/20 hover:scale-110 cursor-pointer w-8 h-8 justify-center items-center flex'><FaArrowLeft/></a><span className='text-gray-500'>back to blog posts</span></div>
+        <div className='flex flex-row gap-2 mt-10 mb-12 items-center'><Link href='/blog' className='rounded-full bg-gray-400/20 hover:scale-110 cursor-pointer w-8 h-8 justify-center items-center flex'><FaArrowLeft/></Link><span className='text-gray-500'>back to blog posts</span></div>
         </div>
       </div>
     </div>
