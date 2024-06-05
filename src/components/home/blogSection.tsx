@@ -21,7 +21,7 @@ const BlogSection = () => {
                             {post.metadata.summary}
                         </div>
                         <div className='text-green-400 hover:text-orange-500 cursor-pointer pt-3 w-fit'>
-                            <Link href={`/blog/${post.slug}`} prefetch={true}>read post</Link>
+                            <Link href={`/blog/${post.slug}`}>read post</Link>
                         </div>
                     </div>
                     <div className='hidden lg:flex relative h-full w-full shadow-md rounded-r-3xl overflow-hidden bg-gray-100'>

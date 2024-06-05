@@ -28,13 +28,6 @@ export const metadata: Metadata = {
   }
 };
 
-const Children = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
-  return (
-    <section>
-
-    </section>
-  )
-}
 
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>)
 {
