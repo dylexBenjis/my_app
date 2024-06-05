@@ -4,7 +4,7 @@ import Socialmedia from "@/components/client components/socialmedia";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";
 import ThemeModeProvider from "@/components/client components/themeProvider";
-import { Inter, Roboto_Mono, Zen_Dots } from 'next/font/google'
+import { Inter, Zen_Dots } from 'next/font/google'
  
 const inter = Inter({
   subsets: ['latin'],
