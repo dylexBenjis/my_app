@@ -81,16 +81,16 @@ const Nav = () => {
 
       <div className={`w-screen fixed pt-4 h-auto transition-all duration-100 z-[10]`} ref={positionRef}  >
       <div className={styles.container}>
-                <div className='flex justify-between'>
+                <div className='grid lg:grid-cols-3 sm:grid-cols-[30%_40%_20%] grid-cols-[45%_25%_20%] gap-4'>
                     {/* <div className={`w-fit h-auto rounded-full overflow-hidden  bg-orange-500`}>
             <a className='flex bg-orange-600 w-[50px] h-[50px] relative'><Image src='/logo.jpg' alt='logo' fill={true}  fetchPriority='high' /></a>
             </div>
       */}
-          <Link href='/'>
+          <Link href='/' className='flex justify-start'>
                       <div style={{transform:scrolled?'scale(1)':'scale(1.2)', transition:scrolled?'0.1s ease-in-out':'0.1s'}}className='text-lg lg:text-2xl font-bold mix-blend-difference text-orange-600 italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_1px_1px_0_rgb(71_89_194)] transition'>dylexBenji</div>
 
           </Link>
-
+<div className='flex justify-center'>
           <div className='hidden  backdrop-blur bg-gray-500/30 sm:flex w-fit gap-x-10 px-6 items-center justify-center border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
                   <div className='cursor-pointer hover:text-gray-400'><Link href='/'>Home</Link></div>
             <div className='cursor-pointer hover:text-gray-400'>
@@ -110,9 +110,10 @@ const Nav = () => {
               <div className='flex  backdrop-blur bg-gray-500/30 sm:hidden w-fit gap-x-10 px-3 items-center justify-center  border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
                   <div className='flex flex-row items-center justify-center gap-1 cursor-pointer w-fit' onClick={()=>setMobileOpen(!mobileOpen)}><p>menu</p> <IoIosArrowDown/></div>
               </div>                
-
-
-            <ThemeSwitch/>
+</div>
+            <div className='flex w-full h-full  justify-end items-center'>
+            <div className='w-fit'><ThemeSwitch /></div>
+            </div>
         </div>   
       
       </div>

@@ -93,12 +93,8 @@ export default async function Blog({ params }: Readonly<{params: Params}>) {
           <div className='pt-[5rem]'>
       <div className={styles.container} style={{display:'flex', justifyContent:'center'}}>
         <div className='w-[600px] prose dark:prose-invert'>
-        <div className='flex flex-row gap-2 mt-2 items-center'><Link href='/blog' className='rounded-full bg-gray-400/20 hover:scale-110 cursor-pointer w-8 h-8 justify-center items-center flex'><FaArrowLeft/></Link><span className='text-gray-500'>back to blog posts</span></div>
-      <div className="flex justify-start items-center mb-5 text-sm  text-neutral-600 dark:text-neutral-400">  
-      <p className="font-semibold">
-        {post.metadata.title}
-      </p>
-      </div>
+            <div className='flex flex-row gap-2 mt-2 mb-8 items-center text-sm sm:text-base  text-neutral-600 dark:text-neutral-400'><div>{'>'}</div><Link href='/blog' className='cursor-pointer w-fit justify-center items-center flex no-underline'>Blog Posts</Link><div>{'>'}</div><Link href={`/blog/${post.slug}`} className='no-underline'> { post.metadata.title}</Link></div>
+
       <article>
         <CustomMDX source={post.content} />
       </article>

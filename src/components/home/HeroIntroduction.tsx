@@ -10,11 +10,11 @@ const HeroIntroduction = () => {
               
               </h1>
               <p className="pb-6 text-base sm:text-lg text-gray-900 dark:text-gray-300">
-                  I’m benji, and i am based in Lagos Nigeria. Engineering and Computer has been things i always want to do.
+                  I’m benji, and i am based in Lagos Nigeria. Engineering and Computer has been things i always do.
               </p>
-              <div className=' py-6'>
+              <div className='pt-1 pb-3'>
                   <a href='mailto:benjichukwudile@gmail.com' target='_blank'>
-                      <button className=' bg-gray-600/30 dark:bg-gray-600 py-4 w-fit px-4 cursor-pointer hover:bg-gray-700/50 dark:hover:bg-gray-700'>Contact me</button>
+                      <button className='rounded-xl bg-gray-600/30 dark:bg-gray-600 py-3 w-fit px-4 cursor-pointer hover:bg-gray-700/50 dark:hover:bg-gray-700'>Contact me</button>
                   </a>
               </div>
           </div>

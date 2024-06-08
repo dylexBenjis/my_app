@@ -6,7 +6,7 @@ import { experienceData } from './workExperienceData'
 
 const Experience = () => {
   return (
-    <div className='py-10'>
+    <div className='py-10 mt-5'>
         
           <div className='grid grid-cols-1 lg:grid-cols-2 px-0 sm:px-[5rem] lg:px-0 gap-5'>
               <div className='flex flex-col items-center border-solid border-2 rounded-[1rem] border-gray-600/50 p-4 gap-4 w-full h-full'>
