@@ -13,5 +13,10 @@ export default async function sitemap() {
     lastModified: new Date().toISOString().split('T')[0],
   }))
 
-  return [...routes, ...blogs]
+  return [{
+    url: `${baseUrl}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority:1,
+  },...routes, ...blogs]
 }
