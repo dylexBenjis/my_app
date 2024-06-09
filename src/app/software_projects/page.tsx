@@ -44,7 +44,7 @@ let content: Array = await getContent()
           <Image src={data.image?.asset?.url} alt='image' fill={true} />
         </div>
         <div className='py-3 px-2'>{data?.description}</div>
-          <div className='flex absolute bottom-0 left-0 px-2 pb-2 gap-5 h-fit w-full justify-end text-lg'>
+          <div className='flex relative bottom-0 left-0 px-2 gap-5 h-auto w-full justify-end text-lg'>
           <div className=''><Link href={data?.repoUrl}><FaGithub/></Link></div>
             <div className=''><Link href={data?.projectUrl}><FaExternalLinkAlt /></Link></div>
           </div>
