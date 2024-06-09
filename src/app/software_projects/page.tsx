@@ -57,7 +57,7 @@ let content: Array = await getContent()
   return (
     <div>
       <div className='relative h-[100px] sm:h-[150px] w-full bg-fixed' style={{ backgroundImage: 'url(/software.webp)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', margin: 0 }}>
-         <div className='absolute inset-0 backdrop-opacity-20 bg-gradient-to-b  from-transparent from-5% via-transparent via-75% dark:via-85%  to-[rgba(12,12,31,0.9)] dark:to-[#04050c] to-95% dark:to-95%'>
+         <div className='absolute inset-0 backdrop-opacity-20 bg-gradient-to-b  from-transparent from-5% via-transparent via-75% dark:via-85%  to-[rgba(12,12,31,0.9)] dark:to-[#04050c] to-90% dark:to-90%'>
           </div>
         </div>
     <div className='py-[5rem]'>
