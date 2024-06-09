@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { FaNodeJs, FaReact } from 'react-icons/fa6'
+import { FaJava, FaJs, FaNodeJs, FaPython, FaReact } from 'react-icons/fa6'
 import {SiCloudflare, SiExpress, SiGit, SiGithub, SiMongodb, SiTypescript, SiVercel,} from 'react-icons/si'
 import { experienceData } from './workExperienceData'
 
@@ -12,12 +12,16 @@ const Experience = () => {
               <div className='flex flex-col items-center border-solid border-2 rounded-[1rem] border-gray-600/50 p-4 gap-4 w-full h-full'>
                   <div className='flex justify-center text-center'>Software Development Tech Stack</div>
                   <div className='grid grid-cols-2 lg:grid-cols-3 w-full gap-5 h-fit'>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>Java</p><FaJava className=''/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>JavaScript</p><FaJs className='text-yellow-400'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>python</p><FaPython className='text-yellow-400'/></div>
                       <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>react</p><FaReact className='text-blue-400'/></div>
-                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>node.js</p><FaNodeJs className='text-yellow-400'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>node.js</p><FaNodeJs className='text-green-400'/></div>
                       <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>express.js</p><SiExpress className='text-white'/></div>
                       <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>cloudflare</p><SiCloudflare className='text-orange-400'/></div>
-                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>typescript</p><SiTypescript className='text-blue-900'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>Typescript</p><SiTypescript className='text-blue-900'/></div>
                       <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>mongoDb</p><SiMongodb className='text-green-400'/></div>
+                      <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>mySql</p></div>
                       <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>vercel</p><SiVercel className='text-black'/></div>
                       <div className='flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2'><p>Git</p><SiGit className='text-orange-700'/></div>
                   </div>

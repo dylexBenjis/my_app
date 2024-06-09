@@ -38,25 +38,26 @@ let content: Array = await getContent()
 
   const ProjectContainer = (data: any) => {
     return (
-          <>
+          <div className='flex flex-col'>
             <div className='text-lg'>{data?.title}</div>
         <div className='relative h-[150px] w-full bg-gray-500'>
           <Image src={data.image?.asset?.url} alt='image' fill={true} />
         </div>
         <div className='py-3 px-2'>{data?.description}</div>
-          <div className='flex relative bottom-0 left-0 px-2 gap-5 h-auto w-full justify-end text-lg'>
+        <div className='pt-2'>
+          <div className='flex absolute  py-2 bottom-0 left-0 px-2 gap-5 h-auto w-full justify-end text-lg'>
           <div className=''><Link href={data?.repoUrl}><FaGithub/></Link></div>
             <div className=''><Link href={data?.projectUrl}><FaExternalLinkAlt /></Link></div>
           </div>
-
-          </>
+        </div>
+          </div>
         )
   }
 // Insert the return component calling `getContent()` below
   return (
     <div>
       <div className='relative h-[100px] sm:h-[150px] w-full bg-fixed' style={{ backgroundImage: 'url(/software.webp)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', margin: 0 }}>
-         <div className='absolute inset-0 backdrop-opacity-20 bg-gradient-to-b  from-transparent from-5% via-transparent via-75% dark:via-85%  to-[rgba(12,12,31,0.9)] dark:to-[#3c3a5270] to-95% dark:to-95%'>
+         <div className='absolute inset-0 backdrop-opacity-20 bg-gradient-to-b  from-transparent from-5% via-transparent via-75% dark:via-85%  to-[rgba(12,12,31,0.9)] dark:to-[#04050c] to-95% dark:to-95%'>
           </div>
         </div>
     <div className='py-[5rem]'>
