@@ -6,6 +6,21 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
     // Optionally, add any other Next.js config below
 
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/images/kidq2gna/production/f1c2291091488d0f9296b32f9a2681b182a4e989-1080x607.jpg',
+      },      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/images/kidq2gna/production/64a19346cedccb6b468d220b4959e477330375fc-1080x525.jpg',
+      },
+    ]
+  }
 
 }
  

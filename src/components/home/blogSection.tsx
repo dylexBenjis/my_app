@@ -15,7 +15,7 @@ const BlogSection = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-[67.5%_30%] justify-between'>
                     <div>         
                         <div className='text-lg'>
-                            {post.metadata.title}
+                            <Link href={`/blog/${post.slug}`} prefetch={true}>{post.metadata.title}</Link>
                         </div>
                         <div className='text-gray-400'>
                             {post.metadata.summary}
