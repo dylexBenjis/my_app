@@ -33,7 +33,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
 {
   return (
     <html lang="en" className={`${inter.variable} ${zen_dots.variable}`} suppressHydrationWarning>
-      <body  className='bg-gray-400/30 dark:bg-[#04050c]'>
+      <body  className='bg-gray-200 dark:bg-[#04050c]'>
         
         <ThemeModeProvider>
         <Socialmedia />

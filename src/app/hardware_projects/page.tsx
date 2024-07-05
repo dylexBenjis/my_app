@@ -46,11 +46,12 @@ let content: Array = await getContent()
 // Insert the return component calling `getContent()` below
   return (
     <>
-      <div className='relative h-[100px] sm:h-[200px] w-full bg-fixed' style={{ backgroundImage: 'url(/hardware.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', margin: 0 }}>
-         <div className='absolute inset-0 backdrop-opacity-20 bg-gradient-to-b  from-transparent from-5% via-transparent via-75% dark:via-85%  to-[rgba(12,12,31,0.9)] dark:to-[#3c3a5270] to-95% dark:to-95%'>
-          </div>
-        </div>
-    <div className='py-[5rem] h-[1600px]'>
+      <div className={styles.container}><div className='fixed top-16 sm:top-24 z-[2] font-zenDots border-l-2 border-gray-400 pl-5 text-white font-bold [text-shadow:_-1px_-1px_0_rgb(7_9_4),_-1px_1px_0_rgb(7_9_9),_-1px_1px_0_rgb(7_9_9),_1px_1px_0_rgb(7_9_9)]'>HARDWARE PROJECTS</div></div>       
+
+      <div className='relative h-[100px] sm:h-[150px] w-full bg-fixed overflow-hidden' style={{ backgroundImage: 'url(/hardware.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', margin: 0 }}>
+
+      </div>
+      <div className='flex relative z-[3] pt-[2.5rem] sm:pt-[3rem] pb-[5rem] bg-gray-200 dark:bg-[#04050c]' style={{boxShadow:'0px -5px 5px 0px rgba(0, 0, 0, 0.8)'}}>
       <div className={styles.container}>
         {/* <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 '>      {
           content.map((data: any, index: number) => {

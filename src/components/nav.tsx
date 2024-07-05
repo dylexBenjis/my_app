@@ -118,9 +118,11 @@ const Nav = () => {
       
       </div>
       {mobileOpen &&
-        <div className='flex  flex-col h-fit w-fit py-3 justify-center items-center border-[1px] shadow-xl dark:shadow-gray-900/30 border-gray-500 bg-gray-300 dark:bg-[#04050c] absolute left-[50%] mt-2 gap-3' style={{transform:'translate(-18%,0)'}} onClick={()=>setMobileOpen(!mobileOpen)}>
-        <div className='flex justify-center items-center px-5'><Link href='/'>Home</Link></div><hr className='bg-black h-[1px] w-[100%]'/>
-        <div className='flex justify-center items-center px-5'>{home? <Links
+        <div className='flex  flex-col h-fit w-fit py-3 justify-center items-center shadow-xl dark:shadow-gray-900/30 border-gray-500 bg-gray-300 dark:bg-[#04050c] absolute left-[50%] mt-2 gap-3' style={{transform:'translate(-18%,0)'}} onClick={()=>setMobileOpen(!mobileOpen)}>
+          <div className='flex justify-center items-center px-5'><Link href='/'>Home</Link></div>
+          <hr className='bg-black h-[0.005rem] w-[100%]' />
+          <div className='flex justify-center items-center px-5'>
+            {home ? <Links
                 to='projects'
                 spy={true}
                 smooth={true}
@@ -129,9 +131,14 @@ const Nav = () => {
                 delay={200}
                 isDynamic={true}
                 ignoreCancelEvents={false}
-                spyThrottle={500}>Projects</Links> : <Link href='/#projects'>Projects</Link>}</div><hr className='bg-black h-[1px] w-[100%]'/>
-        <div className='flex justify-center items-center px-5'><Link href='/blog'>Blog</Link></div>
-      </div>}
+               spyThrottle={500}
+              onClick={() => setMobileOpen(!mobileOpen)}>Projects</Links> : <Link href='/#projects'>Projects</Link>
+            }
+          </div>
+          <hr className='bg-black h-[0.005rem] w-[100%]' />
+          <div className='flex justify-center items-center px-5'><Link href='/blog'>Blog</Link></div>
+        </div>
+      }
 
       </div>
 
