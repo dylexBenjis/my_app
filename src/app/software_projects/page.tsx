@@ -8,6 +8,16 @@ import { FaExternalLinkAlt, FaGithub, FaLink } from 'react-icons/fa';
 
 
 const Page = async () => {
+  
+  type sanityQueriedContent = {
+    title: '',
+    description: '',
+    repoUrl: '',
+    projectUrl: '',
+    image: {
+      url:'',
+    },
+  } 
 
   // Fetch content with GROQ
   async function getContent() {
@@ -33,8 +43,7 @@ const Page = async () => {
   }
 
   // Log content to console
-//@ts-ignore
-let content: Array = await getContent()
+let content: sanityQueriedContent[] = await getContent()
 
   const ProjectContainer = (data: any) => {
     return (
