@@ -4,6 +4,7 @@ import styles from '@/app/page.module.css'
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaExternalLinkAlt, FaGithub, FaLink } from 'react-icons/fa';
+import loading from '../loading';
 
 
 
@@ -50,7 +51,7 @@ let content: sanityQueriedContent[] = await getContent()
           <div className='flex flex-col'>
             <div className='text-lg'>{data?.title}</div>
         <div className='relative h-[150px] w-full bg-gray-500'>
-          <Image src={data.image?.asset?.url} alt='image' fill={true} />
+          <Image src={data.image?.asset?.url} alt='image' fill={true}/>
         </div>
         <div className='py-3 px-2'>{data?.description}</div>
         <div className='pt-2'>
