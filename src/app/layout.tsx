@@ -5,7 +5,10 @@ import Footer from "@/components/footer";
 import Nav from "@/components/nav";
 import ThemeModeProvider from "@/components/client components/themeProvider";
 import { Inter, Zen_Dots } from 'next/font/google'
- 
+import {Analytics} from '@vercel/analytics/react' //to get analytics on site in vercel
+import { SpeedInsights } from '@vercel/speed-insights/react' //to get analytics on site in vercel
+
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -42,7 +45,8 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         <Footer/>
         <ThemeModeProvider/>
         </ThemeModeProvider>
-
+        <Analytics />
+        <SpeedInsights/>
       </body>
     </html>
   );
