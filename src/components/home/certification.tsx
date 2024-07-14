@@ -75,7 +75,7 @@ async function Certification() {
             <div className=''><Link href={data?.cert_external_link}>link</Link></div>
           </div>
         </div>
-        )
+        ) 
     }
     
    return (
