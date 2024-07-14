@@ -6,7 +6,7 @@ const HeroIntroduction = () => {
           <div className="max-w-4xl">
               <h1 className="text-3xl py-6 font-bold tracking-tight sm:text-5xl sm:leading-tight">
             
-              Engineering, Software deveolping, IoT, Computer Networking, Youtube.
+              Sustainable Renewable Energy Engineering, Computer Networking, IoT, Telecommunication, Software deveolpment, Youtube.
               
               </h1>
               <p className="pb-6 text-base sm:text-lg text-gray-900 dark:text-gray-300">
