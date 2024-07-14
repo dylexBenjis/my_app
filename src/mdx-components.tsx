@@ -40,6 +40,7 @@ function CustomLink(props) {
     )
   }
 
+  
   if (href.startsWith('#')) {
     return <a {...props} />
   }
