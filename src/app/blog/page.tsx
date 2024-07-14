@@ -8,10 +8,11 @@ export const metadata = {
   description: 'I try to document everything.',
 }
 
+
 const Page = () => {
     return (
                 <div className='py-[5rem]'>
-      <div className={styles.container} style={{display:'flex', justifyContent:'center'}}>
+      <div className={styles.container } style={{display:'flex', justifyContent:'center'}}>
                 <BlogSection />
       </div>
     </div>
