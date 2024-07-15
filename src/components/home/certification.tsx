@@ -51,10 +51,13 @@ async function Certification() {
         const DataExpired = () => {
             if (data?.expired === 'false') {
                 return (
-                    <span className="relative flex h-3 w-3">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                    </span>
+                    <div className='flex h-fit items-center gap-2'>
+                        <span className="relative flex h-3 w-3">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                        <div className='text-[12px] italic'>Active</div>
+                    </div>
                 )
             }
         };
@@ -70,9 +73,9 @@ async function Certification() {
             <div className='text-sm'>expires: {data?.expired_on}</div>
 
         </div>
-          <div className='flex bottom-0 left-0 px-2 gap-2 h-auto w-full justify-end text-lg'>
-            <div className='py-2'><DataExpired/></div>
-            <div className=''><Link href={data?.cert_external_link}>link</Link></div>
+          <div className='flex bottom-0 left-0 pr-2 gap-2 h-auto w-full justify-between text-lg'>
+            <div><DataExpired/></div>
+            <div className='text-[12px] underline xl:no-underline hover:underline decoration-dotted decoration-blue-500'><Link href={data?.cert_external_link}>View certificate</Link></div>
           </div>
         </div>
         ) 

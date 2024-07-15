@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { formatDate, getBlogPosts } from '@/app/blog/utils'
 import Link from 'next/link'
+import { FaFaceSmile, FaRegFaceSmile } from 'react-icons/fa6'
 
 const BlogSection = () => {
 
@@ -20,7 +21,7 @@ const BlogSection = () => {
                         <div className='text-gray-400'>
                             {post.metadata.summary}
                         </div>
-                        <div className='text-green-400 hover:text-orange-500 cursor-pointer pt-3 w-fit'>
+                        <div className='text-blue-700 dark:text-green-400 hover:text-orange-500 cursor-pointer pt-3 w-fit'>
                             <Link href={`/blog/${post.slug}`} prefetch={true}>read post</Link>
                         </div>
                     </div>
@@ -37,6 +38,7 @@ const BlogSection = () => {
       <div className='py-10 px-0 lg:px-[10rem]'>
           <div className='flex flex-col gap-4'>
               <div className='pb-3 text-xl'>Blog Posts</div>
+              <span className='flex-wrap items-center'># I document my experiences and anything i find fascinating. <span className='inline-flex h-[18px] w-[18px] bg-black  items-center justify-center rounded-full'><FaFaceSmile className='text-yellow-500 rounded-sm text-base'/></span></span>
               <div className='flex flex-col gap-4 py-3'>
                   {allBlogs
                     .sort((a, b) => {
