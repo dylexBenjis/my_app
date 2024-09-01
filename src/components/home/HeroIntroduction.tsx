@@ -10,7 +10,7 @@ const HeroIntroduction = () => {
               
               </h1>
               <p className="pb-6 text-base sm:text-lg text-gray-900 dark:text-gray-300">
-                  I’m benji, and i am based in Lagos Nigeria. Engineering and Computer has been things i always do.
+                  I’m benji, and i am based in Lagos Nigeria. Engineering and Computer have been things i always do.
               </p>
               <div className='pt-1 pb-3'>
                   <a href='mailto:benjichukwudile@gmail.com' target='_blank'>
