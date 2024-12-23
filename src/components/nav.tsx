@@ -9,15 +9,12 @@ import React, {
 import styles from "@/app/page.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import ThemeSwitch from "./client components/themeSwitch";
 import { Link as Links } from "react-scroll";
 import { usePathname } from "next/navigation";
 import { IoIosArrowDown } from "react-icons/io";
 import { relative } from "path";
 
-gsap.registerPlugin(useGSAP);
 
 const Nav = () => {
   //logic to set projects button route right
