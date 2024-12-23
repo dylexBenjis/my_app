@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { client } from "../../../src/sanity/lib/client";
+import { client } from "../../sanity/lib/client";
 import styles from "@/app/page.module.css";
 import Image from "next/image";
 import Link from "next/link";
