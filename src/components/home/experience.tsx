@@ -75,7 +75,7 @@ const Experience = () => {
                 key={index}
                 className="flex flex-col w-full gap-5 px-1 sm:px-14 lg:px-[6rem]"
               >
-                <div className="flex gap-3 sm:gap-5 justify-center items-center">
+                <div className="flex gap-3 sm:gap-5">
                   <div className="flex w-fit h-[50px] rounded-full overflow-hidden">
                     <Image
                       src={data.companyLogo}
