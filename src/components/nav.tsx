@@ -1,153 +1,229 @@
-'use client'
-import React, { use, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import styles from '@/app/page.module.css'
-import Image from 'next/image'
-import Link from 'next/link'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react';
-import ThemeSwitch from './client components/themeSwitch'
-import { Link  as Links} from 'react-scroll';
-import { usePathname } from 'next/navigation'
-import { IoIosArrowDown } from 'react-icons/io'
- 
+"use client";
+import React, {
+  use,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
+import styles from "@/app/page.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ThemeSwitch from "./client components/themeSwitch";
+import { Link as Links } from "react-scroll";
+import { usePathname } from "next/navigation";
+import { IoIosArrowDown } from "react-icons/io";
+import { relative } from "path";
+
 gsap.registerPlugin(useGSAP);
 
 const Nav = () => {
-  
   //logic to set projects button route right
   const router = usePathname();
   const [home, setHome] = useState(false);
   useEffect(() => {
-    if (router === '/') {
-      setHome(true)
+    if (router === "/") {
+      setHome(true);
     } else {
-      setHome(false)
+      setHome(false);
     }
   }, [router]);
 
+  // const [reached, setReached] = useState(false);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 170) {
+  //       setReached(true);
+  //     } else {
+  //       setReached(false);
+  //     }
+  //   };
 
-  const [scrolled, setScrolled] = useState(false);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // });
+
+  //code for navbar visible and hidden logic
+  const [navbarOffset, setNavbarOffset] = useState(0);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [logoOffset, setLogoOffset] = useState(0);
+  const [logoScaleOffset, setLogoScaleOffset] = useState(1.2);
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-    }
-    };
+      const currentScrollY = window.scrollY;
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-
-
-
-  const positionRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-
-
-    let prevScrollPos = 0;
-
-    const handleScroll = () => {
-        const currentScrollPos = window.scrollY;
-
-      const isScrollingUp = currentScrollPos > prevScrollPos ;
-      const isScrollingDown = currentScrollPos < prevScrollPos ;
-      let topp = currentScrollPos * 0.3;
-      if (isScrollingUp&&positionRef.current) {
-        positionRef.current.style.top = `-${topp}px`;
+      //calculate offset for navbar visibility
+      let Offset = 0;
+      if (currentScrollY > 70) {
+        Offset = navbarOffset + (lastScrollY - currentScrollY);
       }
-      if(isScrollingDown&&positionRef.current){
-        positionRef.current.style.top = `0px`;
-
+      if (!(currentScrollY > 70)) {
+        Offset = navbarOffset + (70 - currentScrollY);
       }
-      prevScrollPos = currentScrollPos;
+      Offset = Math.min(0, Math.max(Offset, -65));
+
+      //calculate offset for logo scale
+      let logoScaleOffset = Math.max(1, 1.2 - (0.2 / 170) * currentScrollY);
+
+      console.log(
+        navbarOffset,
+        lastScrollY,
+        currentScrollY,
+        Offset,
+        logoOffset,
+        logoScaleOffset
+      );
+
+      setLogoScaleOffset(logoScaleOffset);
+      setNavbarOffset(Offset);
+      setLastScrollY(currentScrollY);
     };
-
-    window.addEventListener('scroll', handleScroll);
-
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-    
+  }, [lastScrollY, navbarOffset, logoOffset]);
 
   //mobile menu
   const [mobileOpen, setMobileOpen] = useState(false);
   return (
-
-      <div className={`w-screen fixed pt-4 h-auto transition-all duration-100 z-[10]`} ref={positionRef}  >
-      <div className={styles.container}>
-                <div className='grid lg:grid-cols-3 sm:grid-cols-[30%_40%_20%] grid-cols-[45%_25%_20%] gap-4'>
-                    {/* <div className={`w-fit h-auto rounded-full overflow-hidden  bg-orange-500`}>
-            <a className='flex bg-orange-600 w-[50px] h-[50px] relative'><Image src='/logo.jpg' alt='logo' fill={true}  fetchPriority='high' /></a>
-            </div>
-      */}
-          <Link href='/' className='flex justify-start'>
-                      <div style={{transform:scrolled?'scale(1)':'scale(1.2)', transition:scrolled?'0.1s ease-in-out':'0.1s'}}className='text-lg lg:text-2xl font-bold mix-blend-difference text-orange-600 italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_1px_1px_0_rgb(71_89_194)] transition'>dylexBenji</div>
-
-          </Link>
-<div className='flex justify-center'>
-          <div className='hidden  backdrop-blur bg-gray-500/30 sm:flex w-fit gap-x-10 px-6 items-center justify-center border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
-                  <div className='cursor-pointer hover:text-gray-400'><Link href='/'>Home</Link></div>
-            <div className='cursor-pointer hover:text-gray-400'>
-{home? <Links
-                to='projects'
-                spy={true}
-                smooth={true}
-                offset={0}
-                hashSpy={true}
-                delay={200}
-                isDynamic={true}
-                ignoreCancelEvents={false}
-                spyThrottle={500}>Projects</Links> : <Link href='/#projects'>Projects</Link>}
-            </div>
-                  <div className='cursor-pointer hover:text-gray-400'><Link href='/blog'>Blog</Link></div>
-                </div>
-              <div className='flex  backdrop-blur bg-gray-500/30 sm:hidden w-fit gap-x-10 px-3 items-center justify-center  border-solid border-2 border-gray-500/50 rounded-full z-[10]'>
-                  <div className='flex flex-row items-center justify-center gap-1 cursor-pointer w-fit' onClick={()=>setMobileOpen(!mobileOpen)}><p>menu</p> <IoIosArrowDown/></div>
-              </div>                
+    <>
+      <div
+        className={`w-screen fixed py-4 h-auto z-[1000] ${lastScrollY > 70 ? "backdrop-blur-sm" : ""}`}
+        style={{
+          transform: `translateY(${navbarOffset}px)`,
+          transition: "transform 0.1s linear",
+        }}
+      >
+        <div className={styles.container}>
+          <div className="grid lg:grid-cols-3 sm:grid-cols-[30%_40%_20%] grid-cols-[45%_25%_20%] gap-4 ">
+            {/* <div className={`w-fit h-auto rounded-full overflow-hidden  bg-orange-500`}>
+<a className='flex bg-orange-600 w-[50px] h-[50px] relative'><Image src='/logo.jpg' alt='logo' fill={true}  fetchPriority='high' /></a>
 </div>
-            <div className='flex w-full h-full  justify-end items-center'>
-            <div className='w-fit'><ThemeSwitch /></div>
+*/}
+            <div className=" justify-start">
+              <div
+                style={{
+                  scale: `${logoScaleOffset}`,
+                  transition: "scale linear",
+                }}
+                className="w-fit text-2xl text-orange-600 font-bold mix-blend-difference italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_1px_1px_0_rgb(71_89_194)] transition"
+              >
+                <Link href="/">dylexBenji</Link>
+              </div>
             </div>
-        </div>   
-      
-      </div>
-      {mobileOpen &&
-        <div className='flex  flex-col h-fit w-fit py-3 justify-center items-center shadow-xl dark:shadow-gray-900/30 border-gray-500 bg-gray-300 dark:bg-[#04050c] absolute left-[50%] mt-2 gap-3' style={{transform:'translate(-18%,0)'}} onClick={()=>setMobileOpen(!mobileOpen)}>
-          <div className='flex justify-center items-center px-5'><Link href='/'>Home</Link></div>
-          <hr className='bg-black h-[0.005rem] w-[100%]' />
-          <div className='flex justify-center items-center px-5'>
-            {home ? <Links
-                to='projects'
-                spy={true}
-                smooth={true}
-                offset={0}
-                hashSpy={true}
-                delay={200}
-                isDynamic={true}
-                ignoreCancelEvents={false}
-               spyThrottle={500}
-              onClick={() => setMobileOpen(!mobileOpen)}>Projects</Links> : <Link href='/#projects'>Projects</Link>
-            }
+            <div className="flex justify-center">
+              <div className="hidden  bg-gray-500/30 sm:flex w-fit gap-x-10 px-6 items-center justify-center border-solid border-2 border-gray-500/50 rounded-full z-[10]">
+                <div className="cursor-pointer hover:text-gray-400">
+                  <Link href="/">Home</Link>
+                </div>
+                <div className="cursor-pointer hover:text-gray-400">
+                  {home ? (
+                    <Links
+                      to="projects"
+                      spy={true}
+                      smooth={true}
+                      offset={0}
+                      hashSpy={true}
+                      delay={200}
+                      isDynamic={true}
+                      ignoreCancelEvents={false}
+                      spyThrottle={500}
+                    >
+                      Projects
+                    </Links>
+                  ) : (
+                    <Link href="/#projects">Projects</Link>
+                  )}
+                </div>
+                <div className="cursor-pointer hover:text-gray-400">
+                  <Link href="/blog">Blog</Link>
+                </div>
+              </div>
+              <div className="flex  backdrop-blur bg-gray-500/30 sm:hidden w-fit gap-x-10 px-3 items-center justify-center  border-solid border-2 border-gray-500/50 rounded-full z-[10]">
+                <div
+                  className="flex flex-row items-center justify-center gap-1 cursor-pointer w-fit"
+                  onClick={() => setMobileOpen(!mobileOpen)}
+                >
+                  <p>menu</p> <IoIosArrowDown />
+                </div>
+              </div>
+            </div>
+            <div className="flex w-full h-full  justify-end items-center">
+              <div className="w-fit">
+                <ThemeSwitch />
+              </div>
+            </div>
           </div>
-          <hr className='bg-black h-[0.005rem] w-[100%]' />
-          <div className='flex justify-center items-center px-5'><Link href='/blog'>Blog</Link></div>
         </div>
-      }
-
+        {mobileOpen && (
+          <div
+            className="flex  flex-col h-fit w-fit py-3 justify-center items-center shadow-xl dark:shadow-gray-900/30 border-gray-500 bg-gray-300 dark:bg-[#04050c] absolute left-[50%] mt-2 gap-3"
+            style={{ transform: "translate(-18%,0)" }}
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            <div className="flex justify-center items-center px-5">
+              <Link href="/">Home</Link>
+            </div>
+            <hr className="bg-black h-[0.005rem] w-[100%]" />
+            <div className="flex justify-center items-center px-5">
+              {home ? (
+                <Links
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  hashSpy={true}
+                  delay={200}
+                  isDynamic={true}
+                  ignoreCancelEvents={false}
+                  spyThrottle={500}
+                  onClick={() => setMobileOpen(!mobileOpen)}
+                >
+                  Projects
+                </Links>
+              ) : (
+                <Link href="/#projects">Projects</Link>
+              )}
+            </div>
+            <hr className="bg-black h-[0.005rem] w-[100%]" />
+            <div className="flex justify-center items-center px-5">
+              <Link href="/blog">Blog</Link>
+            </div>
+          </div>
+        )}
       </div>
+      {/* <div
+        className="sticky py-3 z-[1000]"
+        style={{
+          // transform: "translateY(70px)",
+          top: `${logoOffset}px`,
+        }}
+      >
+        <div className={styles.container}>
+          <div className=" justify-start">
+            <div
+              style={{
+                scale: `${logoScaleOffset}`,
+                transition: "scale linear",
+              }}
+              className="w-fit text-xl font-bold mix-blend-difference italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(2_0_0),] transition"
+            >
+              <Link href="/">dylexBenji</Link>
+            </div>
+          </div>
+        </div>
+      </div> */}
+    </>
+  );
+};
 
-
- 
-  )
-}
-
-export default Nav
+export default Nav;
 
 // <div className="top-0 z-10 h-16 pt-6" style={{ position: 'sticky' }}>
 //         <div className={`sm:px-8 top-[var(--header-top,theme(spacing.6))] w-full  transition-transform ${scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'}`} ref={positionRef}>
