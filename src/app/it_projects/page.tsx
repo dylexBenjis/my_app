@@ -5,41 +5,41 @@ import Image from "next/image";
 
 const Page = async () => {
   // Fetch content with GROQ
-  async function getContent() {
-    const queryContent = `*[_type == "project"]{
-  title,
-  description,
-  repoUrl,
-  projectUrl,
-  image {
-    asset->{url},
-  }
-}`;
+//   async function getContent() {
+//     const queryContent = `*[_type == "project"]{
+//   title,
+//   description,
+//   repoUrl,
+//   projectUrl,
+//   image {
+//     asset->{url},
+//   }
+// }`;
 
-    const content = await client.fetch(queryContent).then((content) => {
-      console.log(content);
-      return content;
-    });
-    return content;
-  }
+//     const content = await client.fetch(queryContent).then((content) => {
+//       console.log(content);
+//       return content;
+//     });
+//     return content;
+//   }
 
   // Log content to console
   //@ts-ignore
   let content: Array = await getContent();
 
-  const ProjectContainer = (data: any) => {
-    return (
-      <div>
-        <div>{data.title}</div>
-        <div className="h-[150px] w-full bg-gray-500"></div>
-        <div className="border-2 border-solid border-gray-500 py-3 px-2">
-          <div className="">{data.projectUrl}</div>
-          <div className="">{data.projectUrl}</div>
-          <div className="">{data.projectUrl}</div>
-        </div>
-      </div>
-    );
-  };
+  // const ProjectContainer = (data: any) => {
+  //   return (
+  //     <div>
+  //       <div>{data.title}</div>
+  //       <div className="h-[150px] w-full bg-gray-500"></div>
+  //       <div className="border-2 border-solid border-gray-500 py-3 px-2">
+  //         <div className="">{data.projectUrl}</div>
+  //         <div className="">{data.projectUrl}</div>
+  //         <div className="">{data.projectUrl}</div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
   // Insert the return component calling `getContent()` below
   return (
     <>
