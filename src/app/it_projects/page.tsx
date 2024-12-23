@@ -25,7 +25,7 @@ const Page = async () => {
 
   // Log content to console
   //@ts-ignore
-  let content: Array = await getContent();
+  // let content: Array = await getContent();
 
   // const ProjectContainer = (data: any) => {
   //   return (
