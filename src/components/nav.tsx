@@ -109,7 +109,7 @@ const Nav = () => {
                   scale: `${logoScaleOffset}`,
                   transition: "scale linear",
                 }}
-                className="w-fit text-lg sm:text-2xl text-orange-600 font-bold mix-blend-difference italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_1px_1px_0_rgb(71_89_194)] transition"
+                className="w-fit text-[1rem] sm:text-2xl text-orange-600 font-bold mix-blend-difference italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_1px_1px_0_rgb(71_89_194)] transition"
               >
                 <Link href="/">dylexBenji</Link>
               </div>

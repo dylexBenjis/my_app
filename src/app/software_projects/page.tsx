@@ -6,6 +6,25 @@ import Link from "next/link";
 import { FaExternalLinkAlt, FaGithub, FaLink } from "react-icons/fa";
 import loading from "../loading";
 
+// Fetch content with GROQ
+async function getContent() {
+  const queryContent = `*[_type == "software"]{
+  title,
+  description,
+  repoUrl,
+  projectUrl,
+  image {
+    asset->{url},
+  }
+}`;
+
+  const content = await client.fetch(queryContent).then((content) => {
+    console.log(content);
+
+    return content;
+  });
+  return content;
+}
 const Page = async () => {
   type sanityQueriedContent = {
     title: "";
@@ -16,26 +35,6 @@ const Page = async () => {
       url: "";
     };
   };
-
-  // Fetch content with GROQ
-  async function getContent() {
-    const queryContent = `*[_type == "software"]{
-  title,
-  description,
-  repoUrl,
-  projectUrl,
-  image {
-    asset->{url},
-  }
-}`;
-
-    const content = await client.fetch(queryContent).then((content) => {
-      console.log(content);
-
-      return content;
-    });
-    return content;
-  }
 
   // Log content to console
   let content: sanityQueriedContent[] = await getContent();
