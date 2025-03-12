@@ -81,9 +81,14 @@ function Hr(props: any) {
 }
 
 //@ts-ignore
-function Code({ children, ...props }) {
-  let codeHTML = highlight(children);
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+function Code({ children, language, ...props }) {
+  const codeHTML = highlight(children as string);
+
+  return (
+    <pre className="bg-gray-300 dark:bg-gray-900">
+      <code className="" dangerouslySetInnerHTML={{ __html: codeHTML }} />
+    </pre>
+  );
 }
 //@ts-ignore
 function slugify(str) {
@@ -130,7 +135,7 @@ let components = {
   Image: RoundedImage,
   customLink: CustomLink,
   ExternalLink: External_link,
-  // code: Code,
+  Code,
   Table,
   BlogHeaderImage,
   Hr: Hr,
