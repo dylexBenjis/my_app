@@ -29,8 +29,13 @@ const BlogSection = () => {
               </Link>
             </div>
           </div>
-          <div className="flex relative h-[76px] sm:h-[146px] w-[30%] shadow-md overflow-hidden bg-gray-100">
-            <Image src={post.metadata.image} alt="" fill={true} />
+          <div className="flex relative h-[76px] sm:h-[100px] w-[30%] shadow-md overflow-hidden bg-gray-100">
+            <Image
+              src={post.metadata.image}
+              alt=""
+              fill={true}
+              objectFit="cover"
+            />
           </div>
         </div>
       </div>
