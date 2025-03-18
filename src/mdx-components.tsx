@@ -84,11 +84,7 @@ function Hr(props: any) {
 function Code({ children, language, ...props }) {
   const codeHTML = highlight(children as string);
 
-  return (
-    <pre className="bg-gray-300 dark:bg-gray-900">
-      <code className="" dangerouslySetInnerHTML={{ __html: codeHTML }} />
-    </pre>
-  );
+  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} />;
 }
 //@ts-ignore
 function slugify(str) {

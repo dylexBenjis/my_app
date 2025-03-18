@@ -117,7 +117,7 @@ export default async function Blog({ params }: Readonly<{ params: Params }>) {
               </Link>
             </div>
 
-            <article>
+            <article className="sm:w-full">
               <CustomMDX source={post.content} />
             </article>
             <div className="flex flex-row gap-2 mt-10 items-center">
