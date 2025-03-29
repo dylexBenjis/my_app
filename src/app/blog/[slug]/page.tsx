@@ -96,7 +96,7 @@ export default async function Blog({ params }: Readonly<{ params: Params }>) {
           style={{ display: "flex", justifyContent: "center" }}
         >
           <div className="w-[600px] prose dark:prose-invert">
-            <div className="flex flex-row gap-1 mt-2 mb-8 items-center text-[0.65rem] sm:text-base  text-neutral-600 dark:text-neutral-400">
+            <div className="flex flex-row gap-1 mt-2 mb-8 items-center text-[0.65rem] sm:text-base ">
               <Link
                 href="/"
                 className="cursor-pointer w-fit justify-center items-center flex "
@@ -112,7 +112,6 @@ export default async function Blog({ params }: Readonly<{ params: Params }>) {
               </Link>
               <div>{">"}</div>
               <Link href={`/blog/${post.slug}`} className="no-underline">
-                {" "}
                 {post.metadata.title}
               </Link>
             </div>

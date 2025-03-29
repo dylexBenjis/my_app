@@ -15,7 +15,6 @@ import { usePathname } from "next/navigation";
 import { IoIosArrowDown } from "react-icons/io";
 import { relative } from "path";
 
-
 const Nav = () => {
   //logic to set projects button route right
   const router = usePathname();
@@ -91,7 +90,9 @@ const Nav = () => {
   return (
     <>
       <div
-        className={`w-screen fixed py-4 h-auto z-[1000] ${lastScrollY > 70 ? "backdrop-blur-sm" : ""}`}
+        className={`w-screen fixed py-4 h-auto z-[1000] ${
+          lastScrollY > 70 ? "backdrop-blur-sm" : ""
+        }`}
         style={{
           transform: `translateY(${navbarOffset}px)`,
           transition: "transform 0.1s linear",
@@ -109,7 +110,7 @@ const Nav = () => {
                   scale: `${logoScaleOffset}`,
                   transition: "scale linear",
                 }}
-                className="w-fit text-[1rem] sm:text-2xl text-orange-600 font-bold mix-blend-difference italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_1px_1px_0_rgb(71_89_194)] transition"
+                className="w-fit text-[1rem] sm:text-2xl dark:text-white text-orange-600 font-bold mix-blend-difference italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_1px_1px_0_rgb(71_89_194)] transition"
               >
                 <Link href="/">dylexBenji</Link>
               </div>

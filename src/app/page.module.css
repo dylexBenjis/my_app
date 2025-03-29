@@ -1,20 +1,19 @@
 /*for container padding for different views*/
 .container {
-
-    padding-left: 17.5rem;
-    padding-right: 17.5rem;
+  padding-left: 20rem;
+  padding-right: 20rem;
 }
 
-@media screen and (max-width:1300px) {
-    .container {
-        padding-left: 5rem;
-        padding-right: 5rem;
-    }
+@media screen and (max-width: 1300px) {
+  .container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 }
 
-@media  screen and (max-width:600px) {
-.container {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    } 
+@media screen and (max-width: 600px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }

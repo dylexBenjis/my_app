@@ -17,7 +17,7 @@ const Page = () => {
       </div>
 
       <div
-        className="relative h-[100px] sm:h-[150px] w-full bg-fixed overflow-hidden"
+        className="relative h-[100px] sm:h-[150px] w-screen bg-fixed overflow-hidden"
         style={{
           backgroundImage: "url(/software.webp)",
           backgroundSize: "contain",
@@ -26,7 +26,7 @@ const Page = () => {
         }}
       ></div>
       <div
-        className="flex relative px-0 lg:px-[10rem] z-[3] pt-[2.5rem] sm:pt-[3rem] pb-[5rem] bg-gray-200 dark:bg-[#04050c]"
+        className="flex relative px-0 lg:px-[10rem] z-[3] pt-[2.5rem] sm:pt-[3rem] pb-[5rem] "
         style={{ boxShadow: "0px -5px 5px 0px rgba(0, 0, 0, 0.8)" }}
       >
         <div

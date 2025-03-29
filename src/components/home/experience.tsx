@@ -10,21 +10,18 @@ import {
   SiTypescript,
   SiVercel,
 } from "react-icons/si";
-import { experienceData } from "./workExperienceData";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Experience = () => {
   return (
-    <div className="py-10 mt-5">
-      <div className="grid grid-cols-1 lg:grid-cols-2 px-0 sm:px-[5rem] lg:px-0 gap-5">
-        <div className="flex flex-col items-center border-solid border-2 rounded-[1rem] border-gray-600/50 p-4 gap-4 w-full h-full">
-          <div className="flex justify-center text-center">
-            Software Development Stack
+    <div className="py-10  mt-5">
+      <div className="flex justify-center">
+        <div className="flex w-[70%] flex-col items-center border-solid border-2 rounded-[1rem] border-gray-600/50 p-4 gap-4 h-full">
+          <div className="flex justify-center font-bold text-center text-2xl">
+            Stack
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 w-full gap-5 h-fit">
-            <div className="flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2">
-              <p>Java</p>
-              <FaJava className="" />
-            </div>
             <div className="flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2">
               <p>JavaScript</p>
               <FaJs className="text-yellow-400" />
@@ -54,12 +51,9 @@ const Experience = () => {
               <p>express.js</p>
               <SiExpress className="text-white" />
             </div>
+
             <div className="flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2">
-              <p>mongoDb</p>
-              <SiMongodb className="text-green-400" />
-            </div>
-            <div className="flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2">
-              <p>mySql</p>
+              <p>Sql / NoSql</p>
             </div>
             <div className="flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2">
               <p>Git</p>
@@ -67,7 +61,7 @@ const Experience = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col p-4 gap-4 border-solid border-2 rounded-[1rem] border-gray-600/50 w-full h-full items-center">
+        {/* <div className="flex flex-col p-4 gap-4 border-solid border-2 rounded-[1rem] border-gray-600/50 w-full h-full items-center">
           <div>Work Placements</div>
           {experienceData.map((data, index) => {
             return (
@@ -102,9 +96,98 @@ const Experience = () => {
               download cv
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
+    // {/* Skills Section */}
+    // <section id="skills" className="py-12 md:py-20 scroll-mt-20">
+    //   <h2 className="text-3xl font-bold mb-8">Skills & Expertise</h2>
+    //   <Tabs defaultValue="frontend">
+    //     <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
+    //       <TabsTrigger value="frontend">Frontend</TabsTrigger>
+    //       <TabsTrigger value="backend">Backend</TabsTrigger>
+    //       <TabsTrigger value="networking">Networking</TabsTrigger>
+    //       <TabsTrigger value="devops">DevOps</TabsTrigger>
+    //     </TabsList>
+    //     <TabsContent value="frontend" className="mt-6">
+    //       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    //         {["React", "Next.js", "Tailwind CSS", "HTML/CSS"].map((skill) => (
+    //           <Card key={skill}>
+    //             <CardContent className="flex items-center justify-center p-6 gap-2">
+    //               <span className="font-medium">{skill}</span>
+    //               <Image
+    //                 src="/python_logo.svg"
+    //                 alt="python_logo"
+    //                 width={20}
+    //                 height={20}
+    //               ></Image>
+    //             </CardContent>
+    //           </Card>
+    //         ))}
+    //       </div>
+    //     </TabsContent>
+    //     <TabsContent value="backend" className="mt-6">
+    //       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    //         {[
+    //           "Node.js",
+    //           "Express",
+    //           "Python",
+    //           "Django",
+    //           "PostgreSQL",
+    //           "MongoDB",
+    //           "GraphQL",
+    //           "REST API",
+    //         ].map((skill) => (
+    //           <Card key={skill}>
+    //             <CardContent className="flex items-center justify-center p-6">
+    //               <span className="font-medium">{skill}</span>
+    //             </CardContent>
+    //           </Card>
+    //         ))}
+    //       </div>
+    //     </TabsContent>
+    //     <TabsContent value="networking" className="mt-6">
+    //       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    //         {[
+    //           "Cisco Networking",
+    //           "Network Security",
+    //           "VPN",
+    //           "Routing & Switching",
+    //           "Firewalls",
+    //           "Load Balancing",
+    //           "SDN",
+    //           "Network Automation",
+    //         ].map((skill) => (
+    //           <Card key={skill}>
+    //             <CardContent className="flex items-center justify-center p-6">
+    //               <span className="font-medium">{skill}</span>
+    //             </CardContent>
+    //           </Card>
+    //         ))}
+    //       </div>
+    //     </TabsContent>
+    //     <TabsContent value="devops" className="mt-6">
+    //       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    //         {[
+    //           "Docker",
+    //           "Kubernetes",
+    //           "CI/CD",
+    //           "AWS",
+    //           "Azure",
+    //           "Terraform",
+    //           "Linux",
+    //           "Git",
+    //         ].map((skill) => (
+    //           <Card key={skill}>
+    //             <CardContent className="flex items-center justify-center p-6">
+    //               <span className="font-medium">{skill}</span>
+    //             </CardContent>
+    //           </Card>
+    //         ))}
+    //       </div>
+    //     </TabsContent>
+    //   </Tabs>
+    // </section>
   );
 };
 

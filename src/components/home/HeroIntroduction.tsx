@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const HeroIntroduction = () => {
@@ -18,19 +19,29 @@ const HeroIntroduction = () => {
           {/* Renewable Energy, Computer Networking, IoT, Software development. */}
           FullStack Developer, Cloud/I.T. professional
         </h1>
-        <p className="pb-6 text-base sm:text-lg text-gray-900 dark:text-gray-300">
+        <p className="pb-6 text-base sm:text-lg">
           I’m Benjamin Chukwudile, and i am based in Lagos Nigeria. Engineering
           and Computer has been things i always do. I have experience with web
           development using react/Nextjs and with mobile development using
           reactNative/flutter.
         </p>
         <div className="pt-1 pb-3">
-          <a href="mailto:benjichukwudile@gmail.com" target="_blank">
+          <Link href="mailto:benjichukwudile@gmail.com" target="_blank">
             <button className="rounded-md bg-gray-600/30 dark:bg-gray-600 py-2 w-fit px-4 cursor-pointer hover:bg-gray-700/50 dark:hover:bg-gray-700">
               Contact me
             </button>
-          </a>
+          </Link>
         </div>
+      </div>
+      <div className="relative w-full md:w-1/2 aspect-square max-w-md">
+        <Image
+          src="/smile_head.png"
+          alt="Developer portrait"
+          width={400}
+          height={400}
+          className="rounded-full object-cover border-4 border-primary/20"
+          priority
+        />
       </div>
     </div>
   );
