@@ -37,6 +37,7 @@ const Projects = async () => {
       };
     };
     value: "";
+    tags: ""[];
   };
 
   // Log content to console
@@ -112,7 +113,7 @@ const Projects = async () => {
                     <ProjectCard
                       title={data?.title}
                       description={data?.description}
-                      tags={["React", "Node.js", "Network Automation"]}
+                      tags={data?.tags}
                       image={data?.image.asset.url}
                       githubUrl={data?.repoUrl}
                       liveUrl={data?.projectUrl}

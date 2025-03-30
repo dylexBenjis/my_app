@@ -90,7 +90,7 @@ const Nav = () => {
   return (
     <>
       <div
-        className={`w-screen fixed py-4 h-auto z-[1000] ${
+        className={`w-full fixed py-4 h-auto z-[1000] ${
           lastScrollY > 70 ? "backdrop-blur-sm" : ""
         }`}
         style={{

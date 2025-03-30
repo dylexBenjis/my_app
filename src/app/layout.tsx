@@ -42,9 +42,10 @@ export default function RootLayout({
         <ThemeModeProvider>
           <Socialmedia />
           <Nav />
-          <div className="w-full flex justify-center">
-            <div className="max-w-[1200px]">{children}</div>
+          <div className="w-auto flex justify-center overflow-hidden">
+            {children}
           </div>
+
           <Footer />
           <ThemeModeProvider />
         </ThemeModeProvider>

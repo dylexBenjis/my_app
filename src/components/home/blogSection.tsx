@@ -9,7 +9,7 @@ const BlogSection = () => {
   //@ts-ignore
   const BlogSec = (post) => {
     return (
-      <div className="flex flex-col py-3 gap-4">
+      <div className="flex flex-col py-3 gap-4 ">
         <div className="text-gray-500 dark:text-gray-300 text-sm border-gray-400 border-l-2 pl-5">
           {formatDate(post.metadata.publishedAt, false)}
         </div>

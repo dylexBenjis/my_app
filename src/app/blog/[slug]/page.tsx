@@ -95,7 +95,7 @@ export default async function Blog({ params }: Readonly<{ params: Params }>) {
           className={styles.container}
           style={{ display: "flex", justifyContent: "center" }}
         >
-          <div className="w-[600px] prose dark:prose-invert">
+          <div className=" prose dark:prose-invert">
             <div className="flex flex-row gap-1 mt-2 mb-8 items-center text-[0.65rem] sm:text-base ">
               <Link
                 href="/"
@@ -116,7 +116,7 @@ export default async function Blog({ params }: Readonly<{ params: Params }>) {
               </Link>
             </div>
 
-            <article className="sm:w-full">
+            <article className="sm:w-full md:max-w-[400px] lg:max-w-[600px]">
               <CustomMDX source={post.content} />
             </article>
             <div className="flex flex-row gap-2 mt-10 items-center">

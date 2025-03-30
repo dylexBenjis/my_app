@@ -22,8 +22,8 @@ const HeroIntroduction = () => {
         <p className="pb-6 text-base sm:text-lg">
           I’m Benjamin Chukwudile, and i am based in Lagos Nigeria. Engineering
           and Computer has been things i always do. I have experience with web
-          development using react/Nextjs and with mobile development using
-          reactNative/flutter.
+          development using react/Next.js. I also have experience working with
+          networking concepts like wireless network, routing, vpn, etc.
         </p>
         <div className="pt-1 pb-3">
           <Link href="mailto:benjichukwudile@gmail.com" target="_blank">
@@ -33,15 +33,16 @@ const HeroIntroduction = () => {
           </Link>
         </div>
       </div>
-      <div className="relative w-full md:w-1/2 aspect-square max-w-md">
-        <Image
-          src="/smile_head.png"
-          alt="Developer portrait"
-          width={400}
-          height={400}
-          className="rounded-full object-cover border-4 border-primary/20"
-          priority
-        />
+      <div className="flex justify-center justify-self-center relative">
+        <div className="relative w-[150px] h-[150px]">
+          <Image
+            src="/pic.png"
+            alt="Developer portrait"
+            fill
+            className="rounded-full object-cover border-2 border-primary/20"
+            priority
+          />
+        </div>
       </div>
     </div>
   );

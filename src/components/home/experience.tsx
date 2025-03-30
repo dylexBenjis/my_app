@@ -17,7 +17,7 @@ const Experience = () => {
   return (
     <div className="py-10  mt-5">
       <div className="flex justify-center">
-        <div className="flex w-[70%] flex-col items-center border-solid border-2 rounded-[1rem] border-gray-600/50 p-4 gap-4 h-full">
+        <div className="flex w-full md:w-[70%] flex-col items-center p-4 gap-4 h-full">
           <div className="flex justify-center font-bold text-center text-2xl">
             Stack
           </div>
