@@ -59,7 +59,7 @@ interface Params {
   slug: string;
 }
 
-export default async function Blog( params : Params) {
+export default async function Blog( {params} : {params: Params}) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
