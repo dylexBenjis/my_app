@@ -43,8 +43,8 @@ const BlogSection = () => {
   };
 
   return (
-    <div className="py-10 container">
-      <div className="flex container flex-col gap-4">
+    <div className="py-10">
+      <div className="flex flex-col gap-4">
         <span className="flex-wrap items-center">
           I document my experiences and anything i find fascinating.
           <span className="inline-flex h-[18px] w-[18px] bg-black  items-center justify-center rounded-full">
