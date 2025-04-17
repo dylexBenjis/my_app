@@ -38,7 +38,7 @@ export default function RootLayout({
       className={`${inter.variable} ${zen_dots.variable}`}
       suppressHydrationWarning
     >
-      <body className="">
+      <body>
         <ThemeModeProvider>
           <Socialmedia />
           <Nav />
