@@ -32,11 +32,11 @@ const Page = () => {
         }}
       >
         <div
-          className={styles.container}
+        className={styles.container}
           style={{
             display: "flex",
             justifyContent: "center",
-            maxWidth: "700px",
+            maxWidth: "1200px",
           }}
         >
           <BlogSection />

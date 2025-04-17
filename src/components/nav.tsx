@@ -91,7 +91,7 @@ const Nav = () => {
     <>
       <div
         className={`w-full fixed py-4 h-auto z-[1000] ${
-          lastScrollY > 70 ? "backdrop-blur-sm" : ""
+          lastScrollY > 70 ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" : ""
         }`}
         style={{
           transform: `translateY(${navbarOffset}px)`,
@@ -110,7 +110,7 @@ const Nav = () => {
                   scale: `${logoScaleOffset}`,
                   transition: "scale linear",
                 }}
-                className="w-fit text-[1rem] sm:text-2xl dark:text-white text-orange-600 font-bold mix-blend-difference italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_1px_1px_0_rgb(71_89_194)] transition"
+                className="w-fit z-[10] text-[1rem] sm:text-2xl dark:text-white text-orange-600 font-bold italic font-zenDots text-shadow-lg [text-shadow:_-1px_-1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_-1px_1px_0_rgb(71_89_194),_1px_1px_0_rgb(71_89_194)] transition"
               >
                 <Link href="/">dylexBenji</Link>
               </div>
