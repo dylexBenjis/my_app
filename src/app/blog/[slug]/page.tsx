@@ -55,12 +55,13 @@ export function generateMetadata({ params }) {
   };
 }
 
-interface Pageprops{params :{
+type Pageprops= Promise<{
   slug: string;
-}}
+}>
 
-export default async function Blog( {params} : Pageprops) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export default async function Blog( {params} : {params: Pageprops}) {
+  const {slug} = await params;
+  let post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
