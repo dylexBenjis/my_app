@@ -55,11 +55,11 @@ export function generateMetadata({ params }) {
   };
 }
 
-interface Params {
+interface Pageprops{params :{
   slug: string;
-}
+}}
 
-export default async function Blog( {params} : {params: Params}) {
+export default async function Blog( {params} : Pageprops) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
