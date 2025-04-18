@@ -91,7 +91,7 @@ const Nav = () => {
 
   return (
     <>
-      {router=='/studio'?'':<div
+    <div
         className={`w-full fixed py-4 h-auto z-[1000] ${
           lastScrollY > 70 ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" : ""
         }`}
@@ -197,7 +197,7 @@ const Nav = () => {
             </div>
           </div>
         )}
-      </div>}
+      </div>
       {/* <div
         className="sticky py-3 z-[1000]"
         style={{
