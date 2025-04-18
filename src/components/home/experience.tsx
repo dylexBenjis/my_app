@@ -24,7 +24,12 @@ const Experience = () => {
           <div className="grid grid-cols-2 lg:grid-cols-3 w-full gap-5 h-fit">
             <div className="flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2">
               <p>JavaScript</p>
-              <FaJs className="text-yellow-400" />
+              <Image
+                src="/js.svg"
+                alt="js_logo"
+                width={20}
+                height={20}
+              ></Image>
             </div>
             <div className="flex w-full bg-gray-900/20 dark:bg-gray-900 items-center justify-center gap-2 h-[3rem] p-2">
               <p>Typescript</p>

@@ -29,7 +29,12 @@ const HeroIntroduction = () => {
         <div className="pt-1 pb-3">
           <Link href="mailto:benjichukwudile@gmail.com" target="_blank">
             <button className="flex justify-center items-center rounded-md bg-gray-600/30 dark:bg-gray-600 py-2 w-fit px-4 cursor-pointer hover:bg-gray-700/50 dark:hover:bg-gray-700">
-              Contact me &nbsp; <MailIcon size="1rem"/>
+              Contact me &nbsp; <Image
+                src="/Gmail.png"
+                alt="gmail_logo"
+                width={20}
+                height={20}
+              ></Image>
             </button>
           </Link>
         </div>
