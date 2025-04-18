@@ -12,6 +12,7 @@ async function getContent() {
   description,
   repoUrl,
   projectUrl,
+  value,
   image {
     asset->{url},
   }
@@ -37,7 +38,6 @@ const Projects = async () => {
       };
     };
     value: "";
-    tags: ""[];
   };
 
   // Log content to console
@@ -105,15 +105,57 @@ const Projects = async () => {
         <TabsContent value="all" className="mt-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {content.map((data, index) => {
+              console.log(data.value)
               return (
                 //@ts-ignore
 
-                data.value === undefined && (
+                        
                   <section key={index}>
                     <ProjectCard
                       title={data?.title}
                       description={data?.description}
-                      tags={data?.tags}
+                      image={data?.image.asset.url}
+                      githubUrl={data?.repoUrl}
+                      liveUrl={data?.projectUrl}
+                    />
+                  </section>
+                
+              );
+            })}
+          </div>
+        </TabsContent>
+        <TabsContent value="fullstack" className="mt-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {content.map((data, index) => {
+              return (
+                //@ts-ignore
+
+                data.value === 'fullstack' && (
+                  <section key={index}>
+                    <ProjectCard
+                      title={data?.title}
+                      description={data?.description}
+                      image={data?.image.asset.url}
+                      githubUrl={data?.repoUrl}
+                      liveUrl={data?.projectUrl}
+                    />
+                  </section>
+                )
+              );
+            })}
+          </div>
+        </TabsContent>
+        <TabsContent value="networking" className="mt-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {content.map((data, index) => {
+              return (
+                //@ts-ignore
+
+                data.value === 'networking' && (
+                  <section key={index}>
+                    <ProjectCard
+                      title={data?.title}
+                      description={data?.description}
                       image={data?.image.asset.url}
                       githubUrl={data?.repoUrl}
                       liveUrl={data?.projectUrl}
