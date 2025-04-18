@@ -50,7 +50,7 @@ export function ProjectCard({
       </CardContent>
       <div className="justify-between items-center p-3 flex ">
         {githubUrl && (
-          <Button size="sm" asChild>
+          <Button size="sm" className="bg-gray-800 dark:bg-gray-300" asChild>
             <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4" />
               Code
@@ -58,10 +58,10 @@ export function ProjectCard({
           </Button>
         )}
         {liveUrl && (
-          <Button size="sm" asChild>
+          <Button size="sm" className="bg-gray-800 dark:bg-gray-300" asChild>
             <Link href={liveUrl} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-4 w-4" />
-              Demo
+              Live
             </Link>
           </Button>
         )}

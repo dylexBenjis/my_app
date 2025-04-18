@@ -1,3 +1,4 @@
+import { MailIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -27,8 +28,8 @@ const HeroIntroduction = () => {
         </p>
         <div className="pt-1 pb-3">
           <Link href="mailto:benjichukwudile@gmail.com" target="_blank">
-            <button className="rounded-md bg-gray-600/30 dark:bg-gray-600 py-2 w-fit px-4 cursor-pointer hover:bg-gray-700/50 dark:hover:bg-gray-700">
-              Contact me
+            <button className="flex justify-center items-center rounded-md bg-gray-600/30 dark:bg-gray-600 py-2 w-fit px-4 cursor-pointer hover:bg-gray-700/50 dark:hover:bg-gray-700">
+              Contact me &nbsp; <MailIcon size="1rem"/>
             </button>
           </Link>
         </div>
