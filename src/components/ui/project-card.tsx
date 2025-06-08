@@ -32,7 +32,8 @@ export function ProjectCard({
   return (
     <Card
       className="overflow-hidden flex flex-col h-full p-2"
-      data-aos="zoom-in"
+      data-aos="zoom-in" data-aos-once="true" data-aos-duration="500"
+      data-aos-easing="ease-in-sine"
     >
       <div className="relative h-[150px] w-full bg-red-900">
         <Image src={image || "/placeholder.svg"} alt={title} fill />

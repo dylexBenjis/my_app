@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+//import embla css;
+import "../components/embla.css"
 import Socialmedia from "@/components/client components/socialmedia";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";

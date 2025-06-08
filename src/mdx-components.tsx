@@ -3,6 +3,7 @@ import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
 import React from "react";
+import EmblaCarousel from "./components/EmblaCarousel";
 
 //@ts-ignore
 function Table({ data }) {
@@ -75,6 +76,10 @@ const BlogHeaderImage = (props) => {
 function RoundedImage(props) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
+//@ts-ignore
+function CarouselImages(props){
+  return <EmblaCarousel slides={props.slides}/>
+}
 
 function Hr(props: any) {
   return <hr className="border-gray-500  border-3" />;
@@ -135,6 +140,7 @@ let components = {
   Table,
   BlogHeaderImage,
   Hr: Hr,
+  CarouselImages: CarouselImages,
 };
 //@ts-ignore
 export function CustomMDX(props) {

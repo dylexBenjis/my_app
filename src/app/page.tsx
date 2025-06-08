@@ -5,8 +5,10 @@ import Experience from "@/components/home/experience";
 import Projects from "@/components/home/projects";
 import Certification from "@/components/home/certification";
 import Aboutme from "@/components/home/Aboutme";
+import EmblaCarousel from "@/components/EmblaCarousel";
 
 export default function Home() {
+
   return (
     <main className="flex relative min-h-screen flex-col pt-[5rem]">
       <div></div>

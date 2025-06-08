@@ -66,6 +66,8 @@ const Experience = () => {
             </div>
           </div>
         </div>
+        <div>
+        </div>
         {/* <div className="flex flex-col p-4 gap-4 border-solid border-2 rounded-[1rem] border-gray-600/50 w-full h-full items-center">
           <div>Work Placements</div>
           {experienceData.map((data, index) => {
